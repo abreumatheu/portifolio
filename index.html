@@ -90,6 +90,17 @@
         .btn:hover {
             background-color: #000000;
         }
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 120px;
+        }
+        .language-selector select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
         .project-grid {
             display: flex;
             gap: 2rem;
@@ -201,7 +212,7 @@
             font-size: 1rem;
         }
         .contact-form button:hover {
-            background-color: #444;
+            background-color: #000000;
         }
         .whatsapp-button {
             display: flex;
@@ -279,12 +290,222 @@
         (function(){
             emailjs.init("MpMTWz6lesdy-LpbU"); // Seu User ID (public key)
         })();
+
+        function setLanguage(lang) {
+            const texts = {
+                pt: {
+                    welcome: "Bem vindo ao meu mundo...",
+                    about: "Sobre Mim",
+                    aboutContent: [
+                        "Olá, muito prazer",
+                        "Me chamo Matheus, tenho 24 anos, e moro em São Paulo.",
+                        "Sou um estudante de Defesa Cibernética na FIAP,",
+                        "Sou uma pessoa comunicativa, apaixonada por tecnologia e sempre disposta a aprender novas habilidades e enfrentar desafios. Minha paixão pela segurança e desenvolvimento de software começou há alguns anos, e desde então tenho buscado constantemente me aprimorar nessa área.",
+                        "Para saber um pouco mais sobre mim, assista o video a seguir:"
+                    ],
+                    projects: "Projetos",
+                    projectDetails: [
+                        {
+                            title: "CalculadoraForex",
+                            description: "Calculadora para o cálculo do imposto a ser pago em uma operação de Day Trade no mercado de forex. Utiliza APIs para conversão da cotação do dólar."
+                        },
+                        {
+                            title: "ConverTemp",
+                            description: "O ConverTemp é um aplicativo desenvolvido em Kotlin, projetado para facilitar a conversão de temperaturas entre Fahrenheit e Celsius."
+                        },
+                        {
+                            title: "BotDarf",
+                            description: "Projeto para contabilidades, que automatiza o processo de emissão de Darfs para pagamento de impostos, através do programa SisCalc."
+                        }
+                    ],
+                    experience: "Experiência",
+                    skills: "Conhecimentos",
+                    certifications: "Certificações",
+                    certificationDetails: [
+                        {
+                            title: "Desenvolvimento Moderno de Software",
+                            description: "Dio.",
+                            status: "Concluído"
+                        },
+                        {
+                            title: "Defesa Cibernética / DevSecOps",
+                            description: "Faculdade FIAP",
+                            status: "Conclusão: 2026"
+                        }
+                    ],
+                    contact: "Contato",
+                    resume: "Currículo",
+                    resumeDownload: "Baixar Currículo",
+                    contactForm: {
+                        name: "Nome",
+                        email: "Email",
+                        message: "Mensagem",
+                        sendMessage: "Enviar Mensagem"
+                    },
+                    whatsapp: "Enviar Mensagem via WhatsApp"
+                },
+                en: {
+                    welcome: "Welcome to my world...",
+                    about: "About Me",
+                    aboutContent: [
+                        "Hello, nice to meet you",
+                        "My name is Matheus, I'm 24 years old, and I live in São Paulo.",
+                        "I am a Cybersecurity student at FIAP,",
+                        "I am a communicative person, passionate about technology, and always willing to learn new skills and face challenges. My passion for security and software development began a few years ago, and since then I have been constantly striving to improve in this area.",
+                        "To learn a little more about me, watch the video below:"
+                    ],
+                    projects: "Projects",
+                    projectDetails: [
+                        {
+                            title: "ForexCalculator",
+                            description: "Calculator for calculating the tax to be paid on a Day Trade operation in the forex market. Uses APIs for dollar exchange rate conversion."
+                        },
+                        {
+                            title: "ConverTemp",
+                            description: "ConverTemp is an application developed in Kotlin, designed to facilitate temperature conversion between Fahrenheit and Celsius."
+                        },
+                        {
+                            title: "DarfBot",
+                            description: "Project for accounting firms, which automates the process of issuing Darfs for tax payment through the SisCalc program."
+                        }
+                    ],
+                    experience: "Experience",
+                    skills: "Skills",
+                    certifications: "Certifications",
+                    certificationDetails: [
+                        {
+                            title: "Modern Software Development",
+                            description: "Dio.",
+                            status: "Completed"
+                        },
+                        {
+                            title: "Cybersecurity / DevSecOps",
+                            description: "FIAP College",
+                            status: "Completion: 2026"
+                        }
+                    ],
+                    contact: "Contact",
+                    resume: "Resume",
+                    resumeDownload: "Download Resume",
+                    contactForm: {
+                        name: "Name",
+                        email: "Email",
+                        message: "Message",
+                        sendMessage: "Send Message"
+                    },
+                    whatsapp: "Send Message via WhatsApp"
+                },
+                es: {
+                    welcome: "Bienvenido a mi mundo...",
+                    about: "Sobre Mí",
+                    aboutContent: [
+                        "Hola, mucho gusto",
+                        "Me llamo Matheus, tengo 24 años, y vivo en São Paulo.",
+                        "Soy un estudiante de Ciberseguridad en FIAP,",
+                        "Soy una persona comunicativa, apasionada por la tecnología y siempre dispuesta a aprender nuevas habilidades y enfrentar desafíos. Mi pasión por la seguridad y el desarrollo de software comenzó hace algunos años, y desde entonces me he esforzado constantemente por mejorar en esta área.",
+                        "Para saber un poco más sobre mí, mira el siguiente video:"
+                    ],
+                    projects: "Proyectos",
+                    projectDetails: [
+                        {
+                            title: "CalculadoraForex",
+                            description: "Calculadora para calcular el impuesto a pagar en una operación de Day Trade en el mercado de forex. Utiliza APIs para la conversión de la cotización del dólar."
+                        },
+                        {
+                            title: "ConverTemp",
+                            description: "ConverTemp es una aplicación desarrollada en Kotlin, diseñada para facilitar la conversión de temperaturas entre Fahrenheit y Celsius."
+                        },
+                        {
+                            title: "BotDarf",
+                            description: "Proyecto para contabilidades, que automatiza el proceso de emisión de Darfs para el pago de impuestos, a través del programa SisCalc."
+                        }
+                    ],
+                    experience: "Experiencia",
+                    skills: "Conocimientos",
+                    certifications: "Certificaciones",
+                    certificationDetails: [
+                        {
+                            title: "Desarrollo Moderno de Software",
+                            description: "Dio.",
+                            status: "Completado"
+                        },
+                        {
+                            title: "Ciberseguridad / DevSecOps",
+                            description: "Facultad FIAP",
+                            status: "Conclusión: 2026"
+                        }
+                    ],
+                    contact: "Contacto",
+                    resume: "Currículum",
+                    resumeDownload: "Descargar Currículum",
+                    contactForm: {
+                        name: "Nombre",
+                        email: "Correo Electrónico",
+                        message: "Mensaje",
+                        sendMessage: "Enviar Mensaje"
+                    },
+                    whatsapp: "Enviar Mensaje vía WhatsApp"
+                }
+            };
+
+            // Atualizar conteúdo do site de acordo com o idioma selecionado
+            document.getElementById('header-title').innerHTML = texts[lang].welcome;
+            document.querySelector('nav a[href="#sobre"]').innerText = texts[lang].about;
+            document.querySelector('nav a[href="#projetos"]').innerText = texts[lang].projects;
+            document.querySelector('nav a[href="#experiencia"]').innerText = texts[lang].experience;
+            document.querySelector('nav a[href="#conhecimentos"]').innerText = texts[lang].skills;
+            document.querySelector('nav a[href="#certificacoes"]').innerText = texts[lang].certifications;
+            document.querySelector('nav a[href="#contato"]').innerText = texts[lang].contact;
+            document.querySelector('nav a[href="#curriculo"]').innerText = texts[lang].resume;
+
+            // Atualizar conteúdo das seções
+            const aboutSection = document.getElementById('sobre');
+            aboutSection.querySelector('h2').innerText = texts[lang].about;
+            const aboutParagraphs = aboutSection.querySelectorAll('p');
+            texts[lang].aboutContent.forEach((text, index) => {
+                aboutParagraphs[index].innerText = text;
+            });
+
+            const projectCards = document.querySelectorAll('.project-card');
+            texts[lang].projectDetails.forEach((project, index) => {
+                projectCards[index].querySelector('h3').innerText = project.title;
+                projectCards[index].querySelector('p').innerText = project.description;
+                projectCards[index].querySelector('a').innerText = texts[lang].projects;
+            });
+
+            const certificationCards = document.querySelectorAll('.certification-card');
+            texts[lang].certificationDetails.forEach((certification, index) => {
+                certificationCards[index].querySelector('h3').innerText = certification.title;
+                certificationCards[index].querySelector('p').innerText = `${certification.description}\n${certification.status}`;
+                certificationCards[index].querySelector('a').innerText = texts[lang].certifications;
+            });
+
+            // Atualizar formulário de contato
+            const contactForm = texts[lang].contactForm;
+            document.querySelector('label[for="nome"]').innerText = contactForm.name;
+            document.querySelector('label[for="email"]').innerText = contactForm.email;
+            document.querySelector('label[for="mensagem"]').innerText = contactForm.message;
+            document.querySelector('.contact-form button').innerText = contactForm.sendMessage;
+
+            // Atualizar botão de WhatsApp
+            document.querySelector('.whatsapp-button a').innerText = texts[lang].whatsapp;
+
+            // Atualizar botão de download do currículo
+            document.querySelector('section#curriculo a').innerText = texts[lang].resumeDownload;
+        }
     </script>
 </head>
 <body>
     <header>
         <div class="header-title" id="header-title"></div>
         <img src="icone.jpg" alt="Foto de Matheus Abreu" class="profile-picture">
+        <div class="language-selector">
+            <select onchange="setLanguage(this.value)">
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
     </header>
     <nav>
         <a href="#sobre">Sobre Mim</a>
@@ -325,7 +546,7 @@
                 </div>
                 <div class="project-card">
                     <h3>BotDarf</h3>
-                    <p>Projeto para contabilidades, que automatiza o processo de emissão de Darfs para pagamento de impostos, atráves do programa SisCalc. </p>
+                    <p>Projeto para contabilidades, que automatiza o processo de emissão de Darfs para pagamento de impostos, através do programa SisCalc.</p>
                     <a href="https://github.com/abreumatheu/BotDarfSiscalc" class="btn" target="_blank">Ver no GitHub</a>
                 </div>
             </div>
@@ -394,11 +615,6 @@
                     <p>conclusão: 2026</p>
                     <a href="https://www.fiap.com.br/online/graduacao/tecnologo/defesa-cibernetica/" class="btn" target="_blank">Ver Conhecimentos</a>
                 </div>
-                <!-- <div class="certification-card">
-                    <h3>Certificação 3</h3>
-                    <p>Breve descrição da certificação 3.</p>
-                    <a href="link_para_certificado_3.pdf" class="btn" target="_blank">Ver Certificado</a>
-                </div>  -->
             </div>
         </section>
         <section id="contato">
